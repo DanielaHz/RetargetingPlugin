@@ -14,7 +14,6 @@
 #include <vector>
 #include <maya/MObjectArray.h>
 #include <maya/MFnIkJoint.h>
-#include <maya/MVector.h>
 #include <maya/MItGeometry.h>
 #include <maya/MFnSingleIndexedComponent.h>
 #include <maya/MDoubleArray.h>
@@ -25,7 +24,6 @@
 #include <DCCInterface.h>
 #include <maya/MFnMesh.h>
 #include <maya/MPointArray.h>
-#include <maya/MVector.h>
 #include <maya/MTypes.h> 
 #include <maya/MFloatPointArray.h>   
 #include <maya/MFloatVector.h>
@@ -66,20 +64,75 @@ public:
     MStatus positionTransform(const MObject& transform, const MVector& position, MSpace::Space space);
 
     /**
-     * @brief Loads a mesh from an OBJ file into the Maya scene.
-     * @param objPath Path to the OBJ file.
-     * @return Maya status indicating success or failure.
+     * @brief Loads a Maya muscle object from the given file path.
+     * @param objPath Path to the object file (e.g., .obj or .fbx) to load the muscle.
+     * @return MStatus representing the success or failure of the operation.
      */
-
     MStatus loadMayaMuscle(const MString& objPath);
-    MStatus loadMayaSkin(const MString& objPath);
-    MStatus loadMayaSkull(const MString& objPath); // this should be scale based on the size of the meshs
 
+    /**
+     * @brief Loads a Maya skin object from the given file path.
+     * @param objPath Path to the object file (e.g., .obj or .fbx) to load the skin.
+     * @return MStatus representing the success or failure of the operation.
+     */
+    MStatus loadMayaSkin(const MString& objPath);
+
+    /**
+     * @brief Loads a Maya skull object from the given file path and scales it based on mesh size.
+     * 
+     * This method assumes that the skull model needs to be resized according to its dimensions
+     * relative to the mesh.
+     * 
+     * @param objPath Path to the object file (e.g., .obj or .fbx) to load the skull.
+     * @return MStatus representing the success or failure of the operation.
+     */
+    MStatus loadMayaSkull(const MString& objPath); // This should scale based on the size of the mesh.
+
+    /**
+     * @brief Retrieves the Maya muscle object loaded in memory.
+     * @return The loaded MObject representing the muscle.
+     */
     MObject getMayaMuscle();
 
+    /**
+     * @brief Creates a joint at the specified position with the given name.
+     * @param position The 3D position in space where the joint should be created.
+     * @param name The name of the joint.
+     * @return An MObject representing the created joint.
+     */
     MObject createJoint(const MVector& position, const std::string& name);
+
+    /**
+     * @brief Creates a skin cluster for the given mesh using the specified joints.
+     * 
+     * A skin cluster binds the mesh to the joints, enabling deformation based on joint movement.
+     * 
+     * @param joints An array of MObject instances representing the joints.
+     * @param skinMesh The MObject representing the skin mesh to bind to the joints.
+     * @return MStatus representing the success or failure of the operation.
+     */
     MStatus createSkinCluster(const MObjectArray& joints, const MObject& skinMesh);
+
+    /**
+     * @brief Prepares the mesh for skinning based on 3D landmark positions.
+     * 
+     * This method prepares the input mesh for the skinning process by providing the 3D landmarks.
+     * 
+     * @param m_inputMeshLandmarks3D A vector of glm::vec3 objects representing the 3D landmarks of the mesh.
+     * @return MStatus representing the success or failure of the operation.
+     */
     MStatus prepareMeshSkinning(std::vector<glm::vec3> m_inputMeshLandmarks3D);
+
+    /**
+     * @brief Deforms the muscle mesh based on the specified Action Unit deltas and active Action Units.
+     * 
+     * This method applies muscle deformations based on the AU deltas, modifying the muscle shape
+     * based on facial expressions and the distance data from the activated AUs.
+     * 
+     * @param auDeltaTable A table mapping AU IDs to their corresponding ActionUnitDelta vectors.
+     * @param activeAU_opt An optional landmarksDistanceData object representing the active AU, if available.
+     * @return MStatus representing the success or failure of the operation.
+     */
     MStatus muscleDeformation(const std::unordered_map<int, std::vector<ActionUnitDelta>>& auDeltaTable, const std::optional<landmarksDistanceData>& activeAU_opt);
 
     /**

@@ -8,7 +8,7 @@ This project is designed to simplify the workflow for animators by providing boi
 
 ![image](./assets/Demo.gif)
 
-link: https://youtu.be/t6xBt4I6aKw
+Complete link Demo: https://youtu.be/t6xBt4I6aKw
 
 ## Paper Based on Application 
 This application is based on the paper named as: A Facial Motion Retargeting Pipeline for Appearance
@@ -17,14 +17,6 @@ Agnostic 3D Characters (2024)
 ## Features
 - **Facial animation from portraits and audio**
 - **Maya plugin integration**
-
-     - Updates animation data in the **Graph Editor**
-
-     - Reflects changes in the **Time Slider**
-
-     - Synchronizes values in the **Channel Box**
-
-     - Displays attributes in the **Attribute Editor**
 
 ## Facial Landmarks System
 

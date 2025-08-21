@@ -60,5 +60,4 @@ inline std::string sideToString(Side side) {
         default: return "unknown";
     }
 }
-#
 #endif 

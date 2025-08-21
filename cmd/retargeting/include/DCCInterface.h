@@ -93,28 +93,64 @@ class DCCInterface
      */
     bool processNeutralFaceData(const char* landmarksDataJson);
 
-
-    bool processCurrentFaceData(const char* landmarksDataJson);
     /**
-     * @brief Extracts pixel-based landmark vertices from input data.
+     * @brief Processes landmark data for the current (active) face received from the backend.
+     * @param landmarksDataJson JSON string containing current face landmark data.
+     * @return True if processing was successful, false otherwise.
+     */
+    bool processCurrentFaceData(const char* landmarksDataJson);
+
+    /**
+     * @brief Extracts 51 pixel-based landmark vertices for the neutral face.
+
      */
     void get51SetLandmarksNeutralFace();
 
+    /**
+   * @brief Extracts 51 pixel-based landmark vertices for the current face.
+   */
     void get51SetLandmarksCurrentFace();
 
     /**
-     * @brief Compute distances using the internally stored AU‐map.
-     */
+   * @brief Computes landmark distances for the neutral face using the provided Action Unit (AU) map.
+   * @param landmarksAUMap A map where the key is an integer AU identifier and the value is a vector of corresponding landmarks.
+   */
     void computeLandmarksNeutralDistanceData(const std::unordered_map<int,std::vector<landmarksActionUnit>>& landmarksAUMap);
+    
+    /**
+     * @brief Computes landmark distances for the current face using the provided Action Unit (AU) map.
+     * @param landmarksAUMap A map where the key is an integer AU identifier and the value is a vector of corresponding landmarks.
+     */
     void computeLandmarksCurrentDistanceData(const std::unordered_map<int,std::vector<landmarksActionUnit>>& landmarksAUMap);
     
-    
+    /**
+     * @brief Evaluates which Action Units (AUs) are activated based on computed distances and threshold values.
+     * @param thresholdMin Minimum threshold for AU activation.
+     * @param thresholdMax Maximum threshold for AU activation.
+     * @return Optional landmarksDistanceData object containing evaluated AU information, if any.
+     */
     std::optional<landmarksDistanceData> evaluateActivatedAUs(float thresholdMin, float thresholdMax);
 
+    /**
+   * @brief Calculates the intensity of an Action Unit activation based on distance values and thresholds.
+   * @param thresholdMin Minimum threshold distance.
+   * @param thresholdMax Maximum threshold distance.
+   * @param currentDistance Measured distance for current face landmarks.
+   * @param baseDistance Reference distance for the neutral face landmarks.
+   * @return Normalized intensity value in the range [0, 1].
+   */
     float calculateIntensity(float thresholdMin, float thresholdMax, float currentDistance, float baseDistance);
 
+    /**
+   * @brief Returns the 3D landmark vertices from the input mesh.
+   * @return A vector of 3D landmark points (glm::vec3) used for MayaMesh skinning.
+   */
     std::vector<glm::vec3> returnInputMeshLandmarks3D(); // to be used in the skinning part in MayaMesh
 
+    /**
+     * @brief Returns a map of muscle vertex positions.
+     * @return A map where the key is an integer muscle ID and the value is a vector of associated 3D vertices.
+     */
     std::unordered_map<int, std::vector<glm::vec3>> returnMapMuscleVertices();
     private:
 
@@ -128,8 +164,8 @@ class DCCInterface
 
     std::unordered_map<int, std::vector<glm::vec3>> m_mapLandmarksActionUnitVertices;    ///< landmarks to action unit vertex ma    std::unordered_map<int, std::vector<glm::vec3>> returnMapLandmarksActionUnitVertices(); 
 
-    std::vector<landmarksDistanceData> m_landmarksDistanceNeutraResults;
-    std::vector<landmarksDistanceData> m_landmarksDistanceCurrentResults;
+    std::vector<landmarksDistanceData> m_landmarksDistanceNeutraResults;   ///< Stores the computed landmark distance results for the neutral face.
+    std::vector<landmarksDistanceData> m_landmarksDistanceCurrentResults;  ///< Stores the computed landmark distance results for the current (active) face.
 
     std::vector<glm::vec3> m_neutralFaceVertices;        ///< Subset of 51 pixel landmarks used for animation
     std::vector<glm::vec3> m_currentFaceVertices;        ///< Subset of 51 pixel landmarks used for animation

@@ -166,12 +166,12 @@ public:
     std::unordered_map<int, std::vector<int>> getMuscleIndexMap();
 
 private:
-    std::unique_ptr<FacialMesh> m_facialMesh; ///< Facial mesh utility for loading and processing mesh data
-    std::unique_ptr<MathUtils> m_mathUtils;   ///< Utility for computing delta transfers
+    std::unique_ptr<FacialMesh> m_facialMesh;                             ///< Facial mesh utility for loading and processing mesh data
+    std::unique_ptr<MathUtils> m_mathUtils;                               ///< Utility for computing delta transfers
     std::unordered_map<int, std::vector<ActionUnitDelta>> m_auDeltaTable; ///< AU deformation data
     std::unordered_map<int, std::vector<int>> m_muscleIndexMap;           ///< Muscle-to-vertex mapping
     std::vector<glm::vec3> m_neutralFaceVertices;                         ///< Cached neutral face vertices
     VertexDelta m_vertexDelta;                                            ///< Temporary vertex delta container
 };
 
-#endif // ACTIONUNIT_H_
+#endif 

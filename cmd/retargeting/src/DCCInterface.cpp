@@ -8,7 +8,7 @@ std::string DCCInterface::convertModelPathToString(QString &path)
         cleanedPath = cleanedPath.mid(1, cleanedPath.length() - 2);
     }
 
-    std::string modelPath = cleanedPath.toStdString();  // <-- aquí cambio
+    std::string modelPath = cleanedPath.toStdString();  
     return modelPath;
 }
 
