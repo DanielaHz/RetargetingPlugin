@@ -4,6 +4,9 @@
 
 This project is designed to simplify the workflow for animators by providing boilerplate animation data compatible with **Autodesk Maya, a standard DCC (Digital Content Creation)** tool widely used in animation and video game development. **It delivers a plugin that integrates PixelMux technology into animation pipelines**,enabling the generation of facial animation from portraits and audio. Animators can create expressive facial motion while maintaining full control over the animation data directly within **Maya**.
 
+## Demo
+link: https://youtu.be/t6xBt4I6aKw
+
 ## Paper Based on Application 
 This application is based on the paper named as: A Facial Motion Retargeting Pipeline for Appearance
 Agnostic 3D Characters (2024)
