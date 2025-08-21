@@ -1,0 +1,36 @@
+@startuml SpeechDriveSystemFlow
+
+start
+
+:Generate facial landmarks;
+note right
+MotionGenerator.generate()
+returns Vector<FacialLandmark>
+end note
+
+:Interpret landmarks to expression;
+note right
+MotionInterpretation.interpret()
+returns FacialExpression
+end note
+
+:Create facial muscle rig;
+note right
+TargetFaceParametrization.parametrize()
+returns FacialMuscleRig
+end note
+
+:Apply expression to mesh;
+note right
+FacialMuscleRig.applyToMesh()
+end note
+
+:Update the UI;
+note right
+DCCInterface.buildUIPanel()
+DCCInterface.connectUIFunctions()
+end note
+
+stop
+
+@enduml

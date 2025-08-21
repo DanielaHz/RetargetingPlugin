@@ -1,0 +1,479 @@
+{
+  "mappings": [
+    {
+      "auId": 9,
+      "side": "left",
+      "landmarkIndices": [
+        15,
+        40
+      ]
+    },
+    {
+      "auId": 9,
+      "side": "right",
+      "landmarkIndices": [
+        15,
+        41
+      ]
+    },
+    {
+      "auId": 45,
+      "side": "left",
+      "landmarkIndices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "auId": 45,
+      "side": "right",
+      "landmarkIndices": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "auId": 7,
+      "side": "dnleft",
+      "landmarkIndices": [
+        8,
+        27
+      ]
+    },
+    {
+      "auId": 7,
+      "side": "dnright",
+      "landmarkIndices": [
+        12,
+        28
+      ]
+    },
+    {
+      "auId": 7,
+      "side": "upleft",
+      "landmarkIndices": [
+        8,
+        27
+      ]
+    },
+    {
+      "auId": 7,
+      "side": "upright",
+      "landmarkIndices": [
+        12,
+        28
+      ]
+    },
+    {
+      "auId": 44,
+      "side": "center",
+      "landmarkIndices": [
+        8,
+        27,
+        12,
+        28
+      ]
+    },
+    {
+      "auId": 6,
+      "side": "left",
+      "landmarkIndices": [
+        8,
+        27
+      ]
+    },
+    {
+      "auId": 6,
+      "side": "right",
+      "landmarkIndices": [
+        12,
+        28
+      ]
+    },
+    {
+      "auId": 43,
+      "side": "center",
+      "landmarkIndices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "auId": 5,
+      "side": "center",
+      "landmarkIndices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "auId": 42,
+      "side": "left",
+      "landmarkIndices": [
+        8,
+        27
+      ]
+    },
+    {
+      "auId": 42,
+      "side": "right",
+      "landmarkIndices": [
+        12,
+        28
+      ]
+    },
+    {
+      "auId": 41,
+      "side": "center",
+      "landmarkIndices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "auId": 4,
+      "side": "center",
+      "landmarkIndices": [
+        0,
+        3,
+        0,
+        4
+      ]
+    },
+    {
+      "auId": 30,
+      "side": "left",
+      "landmarkIndices": [
+        15,
+        18
+      ]
+    },
+    {
+      "auId": 30,
+      "side": "right",
+      "landmarkIndices": [
+        15,
+        18
+      ]
+    },
+    {
+      "auId": 2,
+      "side": "left",
+      "landmarkIndices": [
+        0,
+        5
+      ]
+    },
+    {
+      "auId": 2,
+      "side": "right",
+      "landmarkIndices": [
+        0,
+        6
+      ]
+    },
+    {
+      "auId": 14,
+      "side": "left",
+      "landmarkIndices": [
+        21,
+        22
+      ]
+    },
+    {
+      "auId": 14,
+      "side": "right",
+      "landmarkIndices": [
+        23,
+        24
+      ]
+    },
+    {
+      "auId": 12,
+      "side": "left",
+      "landmarkIndices": [
+        21,
+        35
+      ]
+    },
+    {
+      "auId": 12,
+      "side": "right",
+      "landmarkIndices": [
+        23,
+        36
+      ]
+    },
+    {
+      "auId": 11,
+      "side": "left",
+      "landmarkIndices": [
+        35,
+        42
+      ]
+    },
+    {
+      "auId": 11,
+      "side": "right",
+      "landmarkIndices": [
+        36,
+        43
+      ]
+    },
+    {
+      "auId": 15,
+      "side": "center",
+      "landmarkIndices": [
+        21,
+        35,
+        23,
+        36
+      ]
+    },
+    {
+      "auId": 1,
+      "side": "center",
+      "landmarkIndices": [
+        0,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "auId": 18,
+      "side": "left",
+      "landmarkIndices": [
+        21,
+        23,
+        33,
+        34,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 18,
+      "side": "right",
+      "landmarkIndices": [
+        21,
+        23,
+        33,
+        34,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 10,
+      "side": "left",
+      "landmarkIndices": [
+        25,
+        35,
+        26,
+        36
+      ]
+    },
+    {
+      "auId": 10,
+      "side": "right",
+      "landmarkIndices": [
+        25,
+        35,
+        26,
+        36
+      ]
+    },
+    {
+      "auId": 27,
+      "side": "center",
+      "landmarkIndices": [
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "auId": 16,
+      "side": "center",
+      "landmarkIndices": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "auId": 17,
+      "side": "center",
+      "landmarkIndices": [
+        37,
+        50
+      ]
+    },
+    {
+      "auId": 20,
+      "side": "left",
+      "landmarkIndices": [
+        44,
+        45
+      ]
+    },
+    {
+      "auId": 20,
+      "side": "right",
+      "landmarkIndices": [
+        44,
+        45
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "lipfunneldnleft",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "lipfunneldnright",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "lipfunnelupleft",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "lipfunnelupright",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "liptightendnleft",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "liptightendnright",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "liptightenupleft",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 22,
+      "side": "liptightenupright",
+      "landmarkIndices": [
+        46,
+        15,
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 23,
+      "side": "center",
+      "landmarkIndices": [
+        21,
+        23,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 24,
+      "side": "center",
+      "landmarkIndices": [
+        15,
+        33
+      ]
+    },
+    {
+      "auId": 25,
+      "side": "center",
+      "landmarkIndices": [
+        18,
+        19,
+        20,
+        46,
+        47
+      ]
+    },
+    {
+      "auId": 26,
+      "side": "center",
+      "landmarkIndices": [
+        18,
+        19,
+        20
+      ]
+    }
+  ]
+}

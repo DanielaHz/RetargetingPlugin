@@ -1,0 +1,10 @@
+{
+  "name": "pixelmux-retargeting",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "gtest",
+    "glm",
+    "tinyobjloader",
+    "nlohmann-json"
+  ]
+}

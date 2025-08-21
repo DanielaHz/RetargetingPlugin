@@ -1,0 +1,64 @@
+@startuml SpeechDriveSystem
+
+' #########################################################
+' User Interface: Digital Content Creation (DCC)
+' #########################################################
+
+class DCCInterface {
+    +buildUIPanel()
+    +connectUIFunctions()
+}
+
+' #########################################################
+' MeshDeformer
+' #########################################################
+
+class FaceMesh {
+    +vertices:vector<Vec3>
+    +bounding_box:vector<Vec3>
+}
+
+class TargetFaceParametrization {
+    +parametrize(face: FaceMesh): FacialMuscleRig
+}
+
+class FacialMuscleRig {
+    +applyToMesh(facialExpression: FacialExpression) : void
+}
+
+' #########################################################
+' MotionInterpretation
+' #########################################################
+
+class ActionUnit {
+    +std::string name
+    +float intensity
+}
+
+class FacialExpression {
+    +action_units: vector<ActionUnit>
+}
+
+class MotionInterpretation {
+    +interpret(landmarks: FacialLandmark): FacialExpression
+}
+
+class FacialLandmark {
+    +position(): Vec3
+}
+
+class MotionGenerator {
+    +generate(): Vector<FacialLandmark>
+}
+
+MotionGenerator --> FacialLandmark
+MotionInterpretation --> FacialLandmark
+MotionInterpretation --> FacialExpression
+FacialExpression *-- ActionUnit
+TargetFaceParametrization --> FaceMesh
+TargetFaceParametrization --> FacialMuscleRig
+FacialMuscleRig --> FacialExpression
+DCCInterface ..> MotionGenerator : uses
+DCCInterface ..> TargetFaceParametrization : configures
+
+@enduml
